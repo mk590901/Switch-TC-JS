@@ -64,14 +64,14 @@ class Switch_resetHelper {
   
     createHelper() {
       this.helper_.insert('switch', 'init', new ThreadedCodeExecutor(this.helper_, 'off', [
-        // switchEntry,
-        // switchInit,
+        // this.switchEntry,
+        // this.switchInit,
         this.offEntry,
       ]));
       this.helper_.insert('off', 'RESET', new ThreadedCodeExecutor(this.helper_, 'off', [
         this.offReset,
-        // offExit,
-        // switchInit,
+        // this.offExit,
+        // this.switchInit,
         this.offEntry,
       ]));
       this.helper_.insert('off', 'TURN', new ThreadedCodeExecutor(this.helper_, 'on', [
@@ -80,16 +80,16 @@ class Switch_resetHelper {
       ]));
       this.helper_.insert('on', 'RESET', new ThreadedCodeExecutor(this.helper_, 'off', [
         this.offReset,
-        // onExit,
-        // offExit,
-        // switchInit,
+        // this.onExit,
+        // this.offExit,
+        // this.switchInit,
         this.offEntry,
       ]));
       this.helper_.insert('on', 'TURN', new ThreadedCodeExecutor(this.helper_, 'off', [
         this.onTurn,
-        // onExit,
-        // offExit,
-        // switchInit,
+        // this.onExit,
+        // this.offExit,
+        // this.switchInit,
         this.offEntry,
       ]));
     }
